@@ -1,0 +1,16 @@
+# LOGBOOK
+
+## 2022-08-27 11:31:19
+
+Initialize project from console:
+
+```
+ docker run --rm -v ${PWD}:/app -it node:14-alpine sh -c "yarn global add @vue/cli-init && yarn global add @vue/cli && vue init 'quasarframework/quasar-starter-kit' app"
+
+```
+
+### Console Utilities
+
+```
+date --rfc-3339=seconds
+```
