@@ -1,6 +1,6 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
+    <q-header>
       <q-toolbar>
         <q-btn
           flat
@@ -10,11 +10,15 @@
           aria-label="Menu"
           @click="toggleLeftDrawer"
         />
-
-        <q-toolbar-title> Quasar App </q-toolbar-title>
-
-        <div>Quasar v{{ $q.version }}</div>
       </q-toolbar>
+      <div class="q-px-lg q-pt-xl q-mb-md">
+        <div class="text-h3">Todo</div>
+        <div class="text-subtitle1">{{ todaysDate }}</div>
+      </div>
+      <q-img
+        src="~assets/nepal-mountains.jpg"
+        class="header-image absolute-top"
+      />
     </q-header>
 
     <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
@@ -84,6 +88,7 @@ const linksList = [
 ];
 
 import { defineComponent, ref } from "vue";
+import { date } from "quasar";
 
 export default defineComponent({
   name: "MainLayout",
@@ -103,5 +108,21 @@ export default defineComponent({
       },
     };
   },
+
+  computed: {
+    todaysDate() {
+      let timeStamp = Date.now();
+      return date.formatDate(timeStamp, "dddd D MMMM");
+    },
+  },
 });
 </script>
+
+<style lang="scss">
+.header-image {
+  height: 100%;
+  z-index: -1;
+  opacity: 0.3;
+  filter: grayscale(100%);
+}
+</style>
