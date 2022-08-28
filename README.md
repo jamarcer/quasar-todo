@@ -1,37 +1,15 @@
 # Quasar Todo (app)
 
-A Quaser Todo app
+A Quaser Todo app developed using a dockerizwd environment
 
-## Install the dependencies
+## Prepare and run the environment
 
 ```bash
-yarn
+docker-compose up -d --build quasar
 ```
 
 ### Start the app in development mode (hot-code reloading, error reporting, etc.)
 
 ```bash
-quasar dev
+docker-compose up -d
 ```
-
-### Lint the files
-
-```bash
-yarn lint
-```
-
-### Format the files
-
-```bash
-yarn format
-```
-
-### Build the app for production
-
-```bash
-quasar build
-```
-
-### Customize the configuration
-
-See [Configuring quasar.conf.js](https://quasar.dev/quasar-cli/quasar-conf-js).
